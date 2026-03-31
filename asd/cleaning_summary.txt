@@ -1,0 +1,30 @@
+CLEANING SUMMARY
+
+DS1 - Online Retail
+Raw rows: 541,909
+Exact duplicate rows removed: 5,268
+Clean rows kept (full): 536,641
+Sales-only rows kept: 524,878
+Rows flagged as cancellations: 9,251
+Rows flagged as returns (negative quantity): 10,587
+
+DS2 - Customer Behavior
+Rows: 5,000
+Standardized categorical values, parsed dates, and added returned_flag/order_year/order_month/order_day.
+
+DS3 - Amazon Products
+Products rows: 728
+Dropped very noisy image/URL helper columns from the cleaned export and parsed numeric price/rating fields.
+
+DS3 - Amazon Reviews
+Reviews rows: 6,327
+Parsed review country/date from review metadata and kept both review_text and cleaned_review_text for analytics.
+
+Additional files created:
+- ds3_amazon_product_review_summary.csv
+- ds3_amazon_products_reviews_nested.json
+
+Recommended project use:
+- DS1 import: ds1_online_retail_sales_only.csv (main SQL fact source)
+- DS2 import: ds2_customer_behavior_clean.csv (CSV external table source)
+- DS3 import: ds3_amazon_products_clean.csv + ds3_amazon_reviews_clean.csv or nested JSON
