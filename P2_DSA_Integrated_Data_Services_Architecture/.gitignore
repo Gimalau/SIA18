@@ -1,0 +1,28 @@
+# IntelliJ / IDE
+.idea/
+*.iml
+
+# Maven / Java generated files
+target/
+*.class
+
+# Spark / Hive generated files
+metastore_db/
+derby.log
+spark-warehouse/
+
+# Logs
+*.log
+
+# Archives from laboratory portal
+*.zip
+*.rar
+*.7z
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Extra local files not required for P2 submission
+temp.xlsx
+SparkSQL_OLAP_Multidimensional_Analytical.sql
