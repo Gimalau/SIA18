@@ -172,4 +172,35 @@ public class RESTViewService {
 		String sql = "SELECT * FROM dsa_amazon_category_stats_v LIMIT 50";
 		return jdbcTemplate.queryForList(sql);
 	}
+	@GetMapping(value = "/DSA_PRICE_BAND_STATS",
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	@ResponseBody
+	public List<Map<String, Object>> get_DSA_PRICE_BAND_STATS() {
+		String sql = "SELECT * FROM dsa_price_band_stats_v ORDER BY band_id";
+		return jdbcTemplate.queryForList(sql);
+	}
+
+	@GetMapping(value = "/DSA_LAG_LEAD",
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	@ResponseBody
+	public List<Map<String, Object>> get_DSA_LAG_LEAD() {
+		String sql = "SELECT * FROM dsa_price_band_lag_lead_v ORDER BY band_id";
+		return jdbcTemplate.queryForList(sql);
+	}
+
+	@GetMapping(value = "/DSA_PERFORMANCE_SEGMENTS",
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	@ResponseBody
+	public List<Map<String, Object>> get_DSA_PERFORMANCE_SEGMENTS() {
+		String sql = "SELECT * FROM dsa_performance_segments_v";
+		return jdbcTemplate.queryForList(sql);
+	}
+
+	@GetMapping(value = "/DSA_SALES_RATING_SEGMENTS",
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	@ResponseBody
+	public List<Map<String, Object>> get_DSA_SALES_RATING_SEGMENTS() {
+		String sql = "SELECT * FROM dsa_sales_rating_segments_v";
+		return jdbcTemplate.queryForList(sql);
+	}
 }

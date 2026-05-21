@@ -22,6 +22,10 @@ DROP VIEW IF EXISTS dsa_sales_rollup_time_band_v;
 DROP VIEW IF EXISTS dsa_sales_cube_country_band_v;
 DROP VIEW IF EXISTS dsa_customer_behavior_segments_v;
 DROP VIEW IF EXISTS dsa_amazon_category_stats_v;
+DROP VIEW IF EXISTS dsa_price_band_stats_v;
+DROP VIEW IF EXISTS dsa_price_band_lag_lead_v;
+DROP VIEW IF EXISTS dsa_performance_segments_v;
+DROP VIEW IF EXISTS dsa_sales_rating_segments_v;
 
 --------------------------------------------------------------------------------
 -- 1. DIMENSION: PRICE BAND
@@ -251,3 +255,22 @@ FROM dsa_customer_behavior_segments_v
 SELECT *
 FROM dsa_amazon_category_stats_v
          LIMIT 20;
+		 
+		 
+--------------------------------------------------------------------------------
+-- END POINTS
+--------------------------------------------------------------------------------
+
+
+-- http://localhost:8096/DSA-WEB-RESTService/rest/OLAP/DSA_SALES_ROLLUP_TIME_BAND
+-- http://localhost:8096/DSA-WEB-RESTService/rest/OLAP/DSA_SALES_CUBE_COUNTRY_BAND
+-- http://localhost:8096/DSA-WEB-RESTService/rest/OLAP/DSA_PRICE_BAND_360
+-- http://localhost:8096/DSA-WEB-RESTService/rest/OLAP/DSA_CUSTOMER_BEHAVIOR_SEGMENTS
+-- http://localhost:8096/DSA-WEB-RESTService/rest/OLAP/DSA_AMAZON_CATEGORY_STATS
+-- http://localhost:8096/DSA-WEB-RESTService/rest/OLAP/DSA_PRICE_BAND_STATS
+-- http://localhost:8096/DSA-WEB-RESTService/rest/OLAP/DSA_LAG_LEAD
+-- http://localhost:8096/DSA-WEB-RESTService/rest/OLAP/DSA_PERFORMANCE_SEGMENTS
+-- http://localhost:8096/DSA-WEB-RESTService/rest/OLAP/DSA_SALES_RATING_SEGMENTS
+--
+--
+--
